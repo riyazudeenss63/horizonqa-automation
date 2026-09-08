@@ -1,0 +1,6 @@
+{
+  "name": "Horizon QA Automation",
+  "description": "QA automation and Lighthouse performance monitoring framework for Horizon Broadband, featuring automated audit analytics, recommendation engine, and login test validation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
