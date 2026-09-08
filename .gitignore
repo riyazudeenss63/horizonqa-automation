@@ -1,0 +1,83 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# =========================
+# Virtual Environment
+# =========================
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# PyTest
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Test Reports
+# =========================
+reports/
+test-results/
+
+# =========================
+# Playwright
+# =========================
+playwright-report/
+blob-report/
+test-results/
+
+# =========================
+# Lighthouse
+# =========================
+lighthouse-report.html
+lighthouse-report.json
+
+# =========================
+# IDE / Editors
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS Generated Files
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Node.js
+# =========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# Temporary Files
+# =========================
+*.tmp
+*.temp
+*.bak
