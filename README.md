@@ -1,4 +1,4 @@
-<img width="2538" height="1943" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/ece6a101-4018-46d6-bf7d-9dccf5f186f8" /># 🌅 Horizon QA Automation Framework
+# 🌅 Horizon QA Automation Framework
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Playwright](https://img.shields.io/badge/playwright-ready-2EAD33.svg)](https://playwright.dev/python/)
