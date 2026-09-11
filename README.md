@@ -1,4 +1,4 @@
-# 🌅 Horizon QA Automation Framework
+<img width="2538" height="1943" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/ece6a101-4018-46d6-bf7d-9dccf5f186f8" /># 🌅 Horizon QA Automation Framework
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Playwright](https://img.shields.io/badge/playwright-ready-2EAD33.svg)](https://playwright.dev/python/)
@@ -72,6 +72,11 @@ The Horizon QA Automation Framework is engineered to enforce high standards of q
 ### Architecture
 
 The framework utilizes the **Page Object Model (POM)** for UI testing to cleanly separate test logic from UI selectors. The performance monitoring module uses a custom Python wrapper to orchestrate Node.js Lighthouse execution.
+
+<img width="1457" height="913" alt="image" src="https://github.com/user-attachments/assets/59d9d6f0-d5ed-4015-95b4-db982e342af7" />
+
+
+
 
 ## 🚀 Getting Started
 
