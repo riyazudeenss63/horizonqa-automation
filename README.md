@@ -10,9 +10,12 @@ A robust, scalable, and maintainable QA automation framework developed for the H
 ---
 
 ## 📑 Table of Contents
+
 - [Overview](#-overview)
 - [Key Features](#-key-features)
 - [Architecture & Tech Stack](#-architecture--tech-stack)
+  - [Libraries & Frameworks](#libraries--frameworks)
+  - [Architecture](#architecture)
 - [Getting Started](#-getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
@@ -39,6 +42,7 @@ The Horizon QA Automation Framework is engineered to enforce high standards of q
 ## ✨ Key Features
 
 ### 🔐 UI Automation (Playwright + Pytest)
+
 - **Page Object Model (POM)** architecture for maximum reusability and maintainability.
 - Robust state validation and explicit waiting strategies.
 - Comprehensive coverage of positive, negative, and edge-case authentication flows.
@@ -46,8 +50,9 @@ The Horizon QA Automation Framework is engineered to enforce high standards of q
 - Rich HTML report generation.
 
 ### ⚡ Lighthouse Profiling
+
 - **CLI-driven** Lighthouse execution for any target URL.
-- Automated extraction of core metrics: *Performance, Accessibility, Best Practices, SEO, and Core Web Vitals*.
+- Automated extraction of core metrics: _Performance, Accessibility, Best Practices, SEO, and Core Web Vitals_.
 - Granular failure analysis identifying specific failed audits.
 - Actionable recommendations generated based on audit results.
 - Persistent JSON reporting for historical analysis.
@@ -56,71 +61,22 @@ The Horizon QA Automation Framework is engineered to enforce high standards of q
 
 ## 🏗️ Architecture & Tech Stack
 
-**Core Technologies**: Python, PyTest, Playwright, Node.js (Lighthouse CLI)
-**Infrastructure**: Git, GitHub Actions
+### Libraries & Frameworks
 
-```mermaid
-flowchart TB
-    %% Styling
-    classDef core fill:#2b3a42,stroke:#3b4d54,stroke-width:2px,color:#fff
-    classDef testSuite fill:#4CAF50,stroke:#388E3C,stroke-width:2px,color:#fff
-    classDef performance fill:#FF9800,stroke:#F57C00,stroke-width:2px,color:#fff
-    classDef external fill:#1976D2,stroke:#1565C0,stroke-width:2px,color:#fff
-    classDef report fill:#9C27B0,stroke:#7B1FA2,stroke-width:2px,color:#fff
+- **Python**: Core programming language.
+- **PyTest**: Test runner and testing framework.
+- **Playwright**: Browser automation library for UI testing.
+- **Node.js**: JavaScript runtime required for Lighthouse.
+- **Lighthouse CLI**: Open-source, automated tool for profiling web page quality.
 
-    subgraph "Horizon QA Automation Framework"
-        direction TB
-        Main[("🚀 Core Orchestrator")]:::core
+### Architecture
 
-        subgraph "UI Automation Suite"
-            direction TB
-            TR[("🧪 PyTest Runner")]:::testSuite
-            POM["📦 Page Object Model"]:::testSuite
-            PW["🎭 Playwright WebDriver"]:::testSuite
-            TR --> POM
-            POM --> PW
-        </subgraph>
-
-        subgraph "Lighthouse Performance Profiler"
-            direction TB
-            CLI["💻 Python CLI Wrapper"]:::performance
-            LH["⚡ Node.js Lighthouse CLI"]:::performance
-            PAR["📝 JSON Report Parser"]:::performance
-            REC["💡 Recommendation Engine"]:::performance
-            CLI --> LH
-            LH --> PAR
-            PAR --> REC
-        </subgraph>
-
-        Main --> TR
-        Main --> CLI
-    end
-
-    subgraph "External Interactions"
-        direction TB
-        App(("🌐 Horizon Web App")):::external
-        App2(("🌐 Target URL")):::external
-    end
-
-    subgraph "Artifacts & Reporting"
-        direction TB
-        Rep1[("📊 HTML Test Reports")]:::report
-        Rep2[("📸 Failure Screenshots")]:::report
-        Rep3[("📈 Lighthouse JSON")]:::report
-    end
-
-    PW -->|Interacts with| App
-    LH -->|Profiles| App2
-    TR -.->|Generates| Rep1
-    TR -.->|Generates| Rep2
-    REC -.->|Outputs| Rep3
-```
-
----
+The framework utilizes the **Page Object Model (POM)** for UI testing to cleanly separate test logic from UI selectors. The performance monitoring module uses a custom Python wrapper to orchestrate Node.js Lighthouse execution.
 
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - **Python** 3.10 or higher
 - **Node.js** (v18+) & **npm** (Required for Lighthouse)
 - **Git**
@@ -128,28 +84,32 @@ flowchart TB
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <YOUR_REPOSITORY_URL>
    cd horizon-qa-automation
    ```
 
 2. **Initialize Python Environment**
+
    ```bash
    python -m venv .venv
-   
+
    # Windows
    .\.venv\Scripts\activate
-   
+
    # Linux/macOS
    source .venv/bin/activate
    ```
 
 3. **Install Dependencies**
+
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Install Browsers (Playwright)**
+
    ```bash
    playwright install chromium
    ```
@@ -168,12 +128,14 @@ cp .env.example .env
 ```
 
 **.env file specification:**
+
 ```ini
 BASE_URL=https://horizon-plus.dfp8hwwhcxnpq.amplifyapp.com
 HORIZON_USERNAME=<your_test_username>
 HORIZON_PASSWORD=<your_test_password>
 HEADLESS=true
 ```
+
 > **⚠️ Security Note:** Ensure `.env` remains in your `.gitignore` to prevent credential leakage.
 
 ---
@@ -184,12 +146,12 @@ HEADLESS=true
 
 The testing suite leverages `pytest` with various markers for targeted execution.
 
-| Command | Description |
-|---------|-------------|
-| `pytest` | Execute the entire test suite |
+| Command           | Description                                         |
+| ----------------- | --------------------------------------------------- |
+| `pytest`          | Execute the entire test suite                       |
 | `pytest -m login` | Execute only tests marked with `@pytest.mark.login` |
-| `pytest --headed` | Run tests with browser UI visible (for debugging) |
-| `pytest -v -s` | Verbose output with print statements |
+| `pytest --headed` | Run tests with browser UI visible (for debugging)   |
+| `pytest -v -s`    | Verbose output with print statements                |
 
 ### Lighthouse Profiling
 
@@ -200,6 +162,7 @@ python lighthouse_tool.py <TARGET_URL>
 ```
 
 **Example:**
+
 ```bash
 python lighthouse_tool.py https://horizon-plus.dfp8hwwhcxnpq.amplifyapp.com/languages
 ```
@@ -237,6 +200,7 @@ horizon-qa-automation/
 ├── requirements.txt         # Python dependencies
 └── README.md                # Documentation
 ```
+
 </details>
 
 ---
@@ -244,6 +208,7 @@ horizon-qa-automation/
 ## 🛠️ Engineering Practices
 
 This framework adheres to strict software engineering principles:
+
 - **Separation of Concerns**: Test logic is strictly decoupled from UI interaction logic via the Page Object Model.
 - **Configurability**: Environment-agnostic execution through `.env` variable injection.
 - **Resilience**: Explicit waits and robust locator strategies using Playwright's auto-waiting mechanisms.
