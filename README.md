@@ -73,6 +73,11 @@ The Horizon QA Automation Framework is engineered to enforce high standards of q
 
 The framework utilizes the **Page Object Model (POM)** for UI testing to cleanly separate test logic from UI selectors. The performance monitoring module uses a custom Python wrapper to orchestrate Node.js Lighthouse execution.
 
+<img width="1457" height="913" alt="image" src="https://github.com/user-attachments/assets/59d9d6f0-d5ed-4015-95b4-db982e342af7" />
+
+
+
+
 ## 🚀 Getting Started
 
 ### Prerequisites
